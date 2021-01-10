@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple rails application with ReactJS in frontend which can be used to add the whiskeys you have tasted in the past and get the sorted list based on color, taste or smokiness.
 
-Things you may want to cover:
 
-* Ruby version
+ Ruby version  - 2.6.3
+ Rails version - 5.2.4
 
-* System dependencies
+Manual
 
-* Configuration
+* Clone the repository
+* Install gems with bundle install
+* Create local database in postgres - rails db:create
+* Run migrations - rails db:migrate
+* Run rails server in terminal
 
-* Database creation
+* To run unit tests:
 
-* Database initialization
+**  bundle exec rspec -> Included all possible model specs & controller specs
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+* Have used react-rails gem and the correponding set up for reactJS components.
 
-* Deployment instructions
-
-* ...
+Cheers!
