@@ -5,4 +5,8 @@ class Whiskey < ApplicationRecord
   def self.get_whiskeys_param_ordered(param_name)
     self.order("#{param_name}")
   end
+
+  def self.search_params
+    ['taste', 'color', 'smokiness']
+  end
 end

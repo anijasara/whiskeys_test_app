@@ -13,8 +13,13 @@ class WhiskeysController < ApplicationController
   end
 
   def search
-    whiskeys = Whiskey.get_whiskeys_param_ordered("#{params[:term].downcase}")
-    render json: whiskeys
+    search_param = params[:term].downcase
+    if search_param && Whiskey.search_params.include?(search_param)
+      whiskeys = Whiskey.get_whiskeys_param_ordered("#{search_param}")
+      render json: whiskeys
+    else
+      render json: { status: "error", message: "Please search for taste, color or smokiness." }, status: :unprocessable_entity
+    end
   end
 
   def update

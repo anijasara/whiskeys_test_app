@@ -2,7 +2,8 @@ class Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      whiskeys: []
+      whiskeys: [],
+      errorMessage: ''
     };
     this.handleFormSubmit = this.handleFormSubmit.bind(this)
     this.addNewWhiskey = this.addNewWhiskey.bind(this)
@@ -36,7 +37,9 @@ class Body extends React.Component {
         },
       }).then((response) => {return response.json()})
       .then(json => this.setState({whiskeys: json}))
-    
+      .catch(err => { 
+        this.setState({errorMessage: err.message});
+      })
   }
 
 
@@ -52,6 +55,7 @@ class Body extends React.Component {
         <NewWhiskey handleFormSubmit={this.handleFormSubmit}/><br />
         <SearchWhiskeys searchWhiskeys={this.searchWhiskeys}  />
         <AllWhiskeys whiskeys={this.state.whiskeys}  />
+        <h3 className="error"> { this.state.errorMessage } </h3>
       </div>
     )
   }
