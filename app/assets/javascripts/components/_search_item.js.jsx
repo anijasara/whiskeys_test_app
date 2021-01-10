@@ -11,8 +11,8 @@ const SearchWhiskeys = (props) => {
           e.target.reset();}
         }
       }>
-      <input ref={input => formFields.term = input} placeholder='Enter the search param'/>
-
+      <input ref={input => formFields.term = input} placeholder='Enter the search param'/>&nbsp;
+      Based on taste, color or smokiness get the whiskeys list!
     </form>
     )
 }

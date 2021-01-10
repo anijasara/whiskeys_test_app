@@ -45,13 +45,13 @@ class Body extends React.Component {
       .then((response) => {return response.json()})
       .then((data) => {this.setState({ whiskeys: data }) });
   }
-  
+
   render(){
     return(
       <div>
-        <NewWhiskey handleFormSubmit={this.handleFormSubmit}/>
-        <AllWhiskeys whiskeys={this.state.whiskeys}  />
+        <NewWhiskey handleFormSubmit={this.handleFormSubmit}/><br />
         <SearchWhiskeys searchWhiskeys={this.searchWhiskeys}  />
+        <AllWhiskeys whiskeys={this.state.whiskeys}  />
       </div>
     )
   }
